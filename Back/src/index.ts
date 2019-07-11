@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import {connect, Mongoose} from 'mongoose';
 import {plantaModel} from './persistencia/plantaModel';
 import {SensorModel} from './persistencia/sensorModel';
@@ -7,12 +6,6 @@ import app from './app';
 import { SensorRepositorio } from './persistencia/sensorRepositorio';
 import { plantaRepositorio } from './persistencia/plantaRepositorio';
 import { Planta } from './entidades/planta';
-=======
-import {connect} from 'mongoose';
-import {SensorRepositorio} from './persistencia/sensorRepositorio'
-import {plantaRepositorio} from './persistencia/plantaRepositorio';
-import app from './app';
->>>>>>> 563759a044405ba7ef12c37a3bc57c24d8e8d66d
 
 (async() => {
     try{
@@ -21,30 +14,6 @@ import app from './app';
 
         app.listen(app.get('port'));
 
-        //Insere Sensor
-        /*await SensorRepositorio.criaSensor({
-            tipo: 'Morango'
-        });*/
-
-        //Insere Planta
-        let sensorID = await SensorRepositorio.criaSensor({
-            tipo: 'Violeta'
-        });
-
-        await plantaRepositorio.criaPlanta({
-            sensor: sensorID,
-            umidade: 300
-        });
-
-    }    catch(error){
-        console.log(`Erro: ${error}`);
-    }
-})();
-<<<<<<< HEAD
-
-async function main() {
-
-    try {
         //console.log('Criar Sensor...');
         //morangos: 60%  a 80%
         //cactos: 20%  a 50%
@@ -77,6 +46,7 @@ async function main() {
         // let p5: Planta = {sensor: sensor5, umidade: 10 };
         // let planta5 = await plantaRepositorio.criaPlanta(p5);
         //
+
         let planta = await plantaRepositorio.buscaTodos();
 
         planta.forEach(async function(p,i){
@@ -96,15 +66,10 @@ async function main() {
               if(p.umidade < 20 || p.umidade > 30)
                 console.log('Lavanda: Vai dar um M...');
             break;
-
-        }
+          }
         });
 
-     } catch (erro) {
-         console.log(`Erro: ${erro.message}`);
+    }    catch(error){
+        console.log(`Erro: ${error}`);
     }
-}
-
-main();
-=======
->>>>>>> 563759a044405ba7ef12c37a3bc57c24d8e8d66d
+})();
