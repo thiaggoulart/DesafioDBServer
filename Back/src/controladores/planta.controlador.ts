@@ -1,37 +1,28 @@
 import {Request, Response, NextFunction} from 'express';
 import {plantaRepositorio} from '../persistencia/plantaRepositorio';
-import { json } from 'body-parser';
+import { SensorRepositorio } from '../persistencia/sensorRepositorio';
 
-export async function postPlanta(req: Request, res: Response, next: NextFunction){
+export async function postRegistro(req: Request, res: Response, next: NextFunction){
     try {
-        const planta = await plantaRepositorio.criaPlanta(req.body);
-        res.json(planta);
-    }catch(erro){
-        next(erro);
-    }
-}
-
-export async function getSensorId(req: Request, res: Response, next: NextFunction){
-    try{
-        const id = req.params.id;
-        const planta = await plantaRepositorio.buscaSensorId(id);
-        if(id !== null){
-            const {umidade, tipo} = planta;
-            res.json({umidade, tipo});
+        const sensor = await SensorRepositorio.buscaSensorId(req.body.sensor);
+        if(sensor !== null){
+            const planta = await plantaRepositorio.criaPlanta({umidade: req.body.valorLeitura, sensor: sensor});
+            res.json(planta);
         } else {
             res.status(404).end();
         }
-    }catch(erro){
-        next(erro);
+    }
+    catch (error) {
+        next(error);
     }
 }
 
-export async function getPlantaTipo(req: Request, res: Response, next: NextFunction){
-    try{
-        const planta = req.params.tipo;
-        const tipos = await plantaRepositorio.buscaTipo(planta);
-        res.json(tipos);
-    }catch(erro){
-        next(erro);
+export async function getPlantaSensor(req: Request, res: Response, next: NextFunction) {
+    try {
+        const sensorId = req.params.id_sensor;
+        const plantas = await plantaRepositorio.buscaPorSensor(sensorId);
+        res.json(plantas);
+    } catch (error) {
+        next(error);
     }
 }

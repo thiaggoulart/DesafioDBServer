@@ -4,7 +4,6 @@ import {Document, model, Schema, SchemaTypes, Model } from 'mongoose';
 interface plantaDocument extends Planta, Document {}
 
 export const plantaModel: Model<plantaDocument> = model<plantaDocument>('Planta', new Schema({
-    sensorId: {type: Number, required: true},
-    tipo: {type: String, required: true},
+    sensor: {type: SchemaTypes.ObjectId, ref: 'Sensor'},
     umidade: {type: Number, required: true},
 }))

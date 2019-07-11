@@ -1,5 +1,6 @@
+import { Sensor } from "./sensor";
+
 export interface Planta {
-    sensorId: number;
-    tipo: string;
+    sensor: Sensor;
     umidade: number;
 }

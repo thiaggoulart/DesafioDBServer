@@ -1,5 +1,6 @@
 import {plantaModel} from './plantaModel';
 import {Planta} from '../entidades/planta';
+import {SensorModel} from './sensorModel'
 
 export class plantaRepositorio {
     
@@ -7,11 +8,11 @@ export class plantaRepositorio {
         return plantaModel.create(planta);
     }
 
-    static async buscaTipo(tipo: string): Promise<Planta[]> {
-        return plantaModel.where('tipo').equals(tipo).populate('tipo', tipo).exec();
+    static async buscaPorId(id: string): Promise<Planta|null>{
+        return plantaModel.findById(id).exec();
     }
 
-    static async buscaSensorId(id: string): Promise<Planta> {
-        return plantaModel.where('sensorId').equals(id).populate('sensorId',id).exec();
+    static async buscaPorSensor(id: string): Promise<Planta[]>{
+        return plantaModel.where('sensor').equals(id).populate('sensor', SensorModel).exec();
     }
 }
