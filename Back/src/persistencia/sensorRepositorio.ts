@@ -3,8 +3,7 @@ import{Sensor} from '../entidades/sensor';
 
 export class SensorRepositorio{
     static async criaSensor(sensor: Sensor): Promise<Sensor>{
-        let novoSensor = await SensorModel.create(sensor);
-        return novoSensor.save();
+        return await SensorModel.create(sensor);
     }
     static async buscaSensorId(id: string): Promise<Sensor|null>{
         return SensorModel.findById(id).exec();
