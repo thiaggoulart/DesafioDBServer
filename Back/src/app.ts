@@ -10,6 +10,7 @@ const app = express();
 const port = '3000';
 
 app.use(cors());
+
 app.set('port',port)
 app.use(bodyParser.json())
 app.use(pathSensor, routerSensor);

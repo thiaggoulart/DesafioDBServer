@@ -5,11 +5,13 @@ import { HttpClientModule } from '@angular/common/http'
 import { AppComponent } from './app.component';
 import { PlantaListarComponent } from './planta-listar/planta-listar.component';
 import { RotasModule } from './rotas.module';
+import { SensorListarComponent } from './planta-listar/sensor-listar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    PlantaListarComponent
+    PlantaListarComponent,
+    SensorListarComponent
   ],
   imports: [
     BrowserModule,

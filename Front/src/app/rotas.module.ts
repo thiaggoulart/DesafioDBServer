@@ -2,10 +2,13 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Routes, RouterModule } from '@angular/router'
 import { PlantaListarComponent } from './planta-listar/planta-listar.component'
+import { SensorListarComponent } from './planta-listar/sensor-listar.component';
 
 const routes: Routes = [
   { path: 'planta', component: PlantaListarComponent},
-  {path: '**', redirectTo: 'planta'}
+  { path: 'sensor', component:SensorListarComponent},
+  {path: '**', redirectTo: '/'}
+
 ]
 
 @NgModule({
