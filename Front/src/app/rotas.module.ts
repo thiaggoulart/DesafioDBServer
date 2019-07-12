@@ -4,7 +4,8 @@ import { Routes, RouterModule } from '@angular/router'
 import { PlantaListarComponent } from './planta-listar/planta-listar.component'
 
 const routes: Routes = [
-  { path: 'sensor', component: PlantaListarComponent}
+  { path: 'planta', component: PlantaListarComponent},
+  {path: '**', redirectTo: 'planta'}
 ]
 
 @NgModule({
