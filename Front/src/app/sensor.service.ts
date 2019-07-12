@@ -15,6 +15,6 @@ export class sensorService {
     ) {}
 
     buscaTodos(): Observable<Sensor[]> {
-        return this.http.get<Sensor[]>(`${this.urlBase}/todos`);
+        return this.http.get<Sensor[]>(`${this.urlBase}`);
     }
 }

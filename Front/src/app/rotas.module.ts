@@ -7,7 +7,7 @@ import { SensorListarComponent } from './planta-listar/sensor-listar.component';
 const routes: Routes = [
   { path: 'planta', component: PlantaListarComponent},
   { path: 'sensor', component:SensorListarComponent},
-  {path: '**', redirectTo: '/'}
+  {path: '**', redirectTo: 'planta'}
 
 ]
 
