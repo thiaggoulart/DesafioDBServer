@@ -5,4 +5,5 @@ export const router = Router();
 export const path = '/planta';
 
 router.post('', controlador.postPlanta);
+router.get('/todas',controlador.getTodasPlantas);
 router.get('/sensor/:sensorId', controlador.getPlantaSensor);

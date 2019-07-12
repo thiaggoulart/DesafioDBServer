@@ -65,6 +65,15 @@ export async function postPlanta(req: Request, res: Response, next: NextFunction
     }
 }
 
+export async function getTodasPlantas(req: Request, res: Response, next: NextFunction){
+    try{
+        const plantas = await plantaRepositorio.buscaTodos();
+        res.json(plantas);
+    }catch (error){
+        next(error);
+    }
+}
+
 export async function getPlantaSensor(req: Request, res: Response, next: NextFunction) {
     try {
         const sensorId = req.params.sensorId;
