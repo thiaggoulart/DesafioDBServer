@@ -1,3 +1,4 @@
 export interface Sensor{
-    tipo: string
+    tipo: string,
+    status: string
 }

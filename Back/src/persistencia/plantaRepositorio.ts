@@ -23,5 +23,5 @@ export class plantaRepositorio {
     }
 
     static async buscaTodos(): Promise<Planta[]> {
-        return plantaModel.find().exec();
+        return plantaModel.find().populate('sensor', SensorModel).exec();
     }}

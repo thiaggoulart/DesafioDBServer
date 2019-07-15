@@ -1,3 +1,13 @@
-<li *ngFor = "let planta of dataSource">{{planta.umidade}}</li>
+<mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+  <ng-container matColumnDef="sensor">
+    <mat-header-cell *matHeaderCellDef> Planta </mat-header-cell>
+     <mat-cell *matCellDef="let element">{{element.sensor.tipo}}</mat-cell>
+  </ng-container>
+    <ng-container matColumnDef="umidade">
+      <mat-header-cell *matHeaderCellDef> Umidade </mat-header-cell>
+       <mat-cell *matCellDef="let element"> {{element.umidade}}</mat-cell>
+    </ng-container>
 
-<li *ngFor = "let sensor of dataSensor" routerLink="/sensor">{{sensor.tipo}}</li>
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+  </mat-table>

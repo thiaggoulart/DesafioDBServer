@@ -54,17 +54,17 @@ import { Planta } from './entidades/planta';
           switch (sensor[i].tipo){
             case 'morangos':
               if(p.umidade < 60 || p.umidade > 80)
-              console.log('Morango: Vai dar um M...');
+              //console.log('Morango: Vai dar um M...');
             break;
 
             case 'cactos':
               if(p.umidade < 20 || p.umidade > 50)
-                console.log('Cactos: Vai dar um M...');
+                //console.log('Cactos: Vai dar um M...');
             break;
 
             case 'lavanda':
               if(p.umidade < 20 || p.umidade > 30)
-                console.log('Lavanda: Vai dar um M...');
+                //console.log('Lavanda: Vai dar um M...');
             break;
           }
         });

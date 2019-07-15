@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Planta } from '../planta';
 import { plantaService } from '../planta.service';
+import {Sensor} from '../sensor'
 
 @Component({
   selector: 'app-planta-listar',

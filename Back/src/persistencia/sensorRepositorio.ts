@@ -12,6 +12,10 @@ export class SensorRepositorio{
         return SensorModel.where('tipo').equals(tipo).exec();
     }
 
+    static async buscarPorStatus(status: string): Promise<Sensor[]>{
+        return SensorModel.where('status').equals(status).exec();
+    }
+
     static async buscaTodos(): Promise<Sensor[]> {
         return SensorModel.find().exec();
     }
