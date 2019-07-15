@@ -8,3 +8,4 @@ router.post('', controlador.postSensor);
 router.get('', controlador.getSensores);
 router.get('/:id', controlador.getSensorId);
 router.get('/tipo/:tipo', controlador.getSensorTipo);
+router.post('/id=:id/status=:status', controlador.updateSensor);

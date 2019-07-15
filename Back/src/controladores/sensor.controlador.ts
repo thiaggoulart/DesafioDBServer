@@ -11,6 +11,21 @@ export async function postSensor(req: Request, res: Response, next: NextFunction
     }
 }
 
+export async function updateSensor(req: Request, res: Response, next: NextFunction){
+    try {
+      console.log(`chegou`)
+        const id = req.params.id;
+        const status = req.params.status;
+        const sensor = await SensorRepositorio.setStatus(id,status);
+        console.log(sensor)
+        res.json(sensor);
+    }
+    catch (error) {
+        next(error);
+    }
+}
+
+
 export async function getSensores(req: Request, res: Response, next: NextFunction) {
     try{
         const sensores = await SensorRepositorio.buscaTodos();

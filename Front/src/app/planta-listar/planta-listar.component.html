@@ -1,13 +1,23 @@
 <mat-table [dataSource]="dataSource" class="mat-elevation-z8">
   <ng-container matColumnDef="sensor">
     <mat-header-cell *matHeaderCellDef> Planta </mat-header-cell>
-     <mat-cell *matCellDef="let element">{{element.sensor.tipo}}</mat-cell>
+    <mat-cell *matCellDef="let element">{{element.sensor.tipo}}</mat-cell>
   </ng-container>
-    <ng-container matColumnDef="umidade">
-      <mat-header-cell *matHeaderCellDef> Umidade </mat-header-cell>
-       <mat-cell *matCellDef="let element"> {{element.umidade}}</mat-cell>
-    </ng-container>
+  <ng-container matColumnDef="umidade">
+    <mat-header-cell *matHeaderCellDef> Umidade </mat-header-cell>
+    <mat-cell *matCellDef="let element"> {{element.umidade}}</mat-cell>
+  </ng-container>
+  <ng-container matColumnDef="status">
+    <mat-header-cell *matHeaderCellDef> Status </mat-header-cell>
+    <mat-cell *matCellDef="let element"> {{element.sensor.status}}</mat-cell>
+  </ng-container>
 
-    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
-    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
-  </mat-table>
+  <ng-container matColumnDef="actions">
+      <mat-header-cell  *matHeaderCellDef > Actions </mat-header-cell>
+      <mat-cell *matCellDef="let row">
+           <button mat-raised-button color="primary">Editar</button>
+      </mat-cell>
+    </ng-container>
+  <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+  <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+</mat-table>

@@ -11,11 +11,9 @@ export class SensorRepositorio{
     static async buscarPorTipo(tipo: string): Promise<Sensor[]>{
         return SensorModel.where('tipo').equals(tipo).exec();
     }
-
-    static async buscarPorStatus(status: string): Promise<Sensor[]>{
-        return SensorModel.where('status').equals(status).exec();
+    static async setStatus(sensor:Sensor,statusAtualizado: string) {
+      return SensorModel.updateOne({_id: sensor},{status: statusAtualizado});
     }
-
     static async buscaTodos(): Promise<Sensor[]> {
         return SensorModel.find().exec();
     }

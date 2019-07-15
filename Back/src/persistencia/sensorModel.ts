@@ -6,5 +6,5 @@ interface SensorDocument extends Sensor, Document {}
 
 export const SensorModel: Model<SensorDocument> = model<SensorDocument>('Sensor', new Schema({
     tipo: { type: String, required: true },
-    status:{type: String}
+    status:{type: String, required: false}
 }), 'sensor');

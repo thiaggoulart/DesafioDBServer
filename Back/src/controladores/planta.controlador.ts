@@ -12,45 +12,70 @@ export async function postPlanta(req: Request, res: Response, next: NextFunction
                 case 'morango':
                     if(planta.umidade > 80){
                         res.send(`Muita umidade no sensor ${sensor}`);
+                        SensorRepositorio.setStatus(sensor,'Alta');
                     }
                     else if(planta.umidade < 60){
+                        SensorRepositorio.setStatus(sensor,'Baixa');
                         res.send(`Pouca umidade no sensor ${sensor}`);
+                    }else{
+                      SensorRepositorio.setStatus(sensor,'Ideal');
+                      res.send(`Umidade ideal no sensor ${sensor}`);
                     }
                 break;
 
                 case 'violeta':
                     if(planta.umidade > 80){
+                        SensorRepositorio.setStatus(sensor,'Alta');
                         res.send(`Muita umidade no sensor ${sensor}`);
                     }
                     else if(planta.umidade < 40){
+                        SensorRepositorio.setStatus(sensor,'Baixa');
                         res.send(`Pouca umidade no sensor ${sensor}`);
+                    }else{
+                      SensorRepositorio.setStatus(sensor,'Ideal');
+                      res.send(`Umidade ideal no sensor ${sensor}`);
                     }
                 break;
 
                 case 'lavanda':
                     if(planta.umidade > 30){
+                        SensorRepositorio.setStatus(sensor,'Alta');
                         res.send(`Muita umidade no sensor ${sensor}`);
                     }
                     else if(planta.umidade < 20){
+                        SensorRepositorio.setStatus(sensor,'Baixa');
                         res.send(`Pouca umidade no sensor ${sensor}`);
+                    }else{
+                      SensorRepositorio.setStatus(sensor,'Ideal');
+                      res.send(`Umidade ideal no sensor ${sensor}`);
                     }
                 break;
 
                 case 'cacto':
                     if(planta.umidade > 50){
+                        SensorRepositorio.setStatus(sensor,'Alta');
                         res.send(`Muita umidade no sensor ${sensor}`);
                     }
                     else if(planta.umidade < 20){
+                        SensorRepositorio.setStatus(sensor,'Baixa');
                         res.send(`Pouca umidade no sensor ${sensor}`);
+                    }else{
+                      SensorRepositorio.setStatus(sensor,'Ideal');
+                      res.send(`Umidade ideal no sensor ${sensor}`);
                     }
                 break;
 
                 case 'cogumelo':
                     if(planta.umidade > 90){
+                        SensorRepositorio.setStatus(sensor,'Alta');
                         res.send(`Muita umidade no sensor ${sensor}`);
                     }
                     else  if(planta.umidade < 80){
+                        SensorRepositorio.setStatus(sensor,'Baixa');
                         res.send(`Pouca umidade no sensor ${sensor}`);
+                    }else{
+                      SensorRepositorio.setStatus(sensor,'Ideal');
+                      res.send(`Umidade ideal no sensor ${sensor}`);
                     }
                 break;
             }

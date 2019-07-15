@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Planta } from '../planta';
 import { plantaService } from '../planta.service';
-import {Sensor} from '../sensor'
 
 @Component({
   selector: 'app-planta-listar',
@@ -9,7 +8,7 @@ import {Sensor} from '../sensor'
   styleUrls: ['./planta-listar.component.css']
 })
 export class PlantaListarComponent implements OnInit {
-  displayedColumns: string[] = ['sensor', 'umidade'];
+  displayedColumns: string[] = ['sensor', 'umidade','status','actions'];
   dataSource: Planta[] = [];
 
   constructor(
