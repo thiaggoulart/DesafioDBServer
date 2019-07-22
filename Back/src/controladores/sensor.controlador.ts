@@ -3,13 +3,15 @@ import {SensorRepositorio} from '../persistencia/sensorRepositorio';
 
 export async function postSensor(req: Request, res: Response, next: NextFunction){
     try {
-        const sensor = await SensorRepositorio.criaSensor(req.body);
+        console.log(req.body.sensor)
+        const sensor = await SensorRepositorio.criaSensor(req.body.sensor);
         res.json(sensor);
     }
     catch (error) {
         next(error);
     }
 }
+
 
 export async function updateSensor(req: Request, res: Response, next: NextFunction){
     try {

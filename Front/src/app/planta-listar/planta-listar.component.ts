@@ -8,7 +8,7 @@ import { plantaService } from '../planta.service';
   styleUrls: ['./planta-listar.component.css']
 })
 export class PlantaListarComponent implements OnInit {
-  displayedColumns: string[] = ['sensor', 'umidade','status','actions'];
+  displayedColumns: string[] = ['sensor', 'umidade','status'];
   dataSource: Planta[] = [];
 
   constructor(
