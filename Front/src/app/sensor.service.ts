@@ -9,6 +9,7 @@ import { Sensor } from './sensor';
 
 export class sensorService {
     private urlBase = 'http://localhost:3000/sensor';
+    //private urlBase = 'mongodb+srv://sensores:sensores123@projeto-yan8z.mongodb.net/test?retryWrites=true&w=majority';
 
     constructor(
         private http: HttpClient,
